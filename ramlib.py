@@ -30,7 +30,7 @@ class genrandom():
    
 
     def generate(self, a, b, s=31):
-        time.sleep(0.009)
+        time.sleep(0.009)   # higher it is, better it becomes
         self.all = self.generate_random_number(a, b, s)
         self.new, self.random_number, self.last, self.original = self.all
         return self.new
