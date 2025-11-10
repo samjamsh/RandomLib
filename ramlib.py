@@ -37,11 +37,6 @@ class genrandom():
 
 
     def abs_custom(self, value):
-
-        """
-    Retorna o valor absoluto de 'value' sem usar a função abs() nativa.
-    Se for negativo, multiplica por -1.
-        """
         if value < 0:
             return value * -1
         else:
@@ -50,10 +45,6 @@ class genrandom():
 
 
     def get_time(self):
-        """
-    Obtém o tempo atual do sistema e retorna os componentes necessários
-    para geração do seed aleatório.
-        """
         now = datetime.datetime.now()           # captura data e hora atuais
         hora = now.hour                         # extrai a hora
         minuto = now.minute                     # extrai o minuto
@@ -69,19 +60,8 @@ class genrandom():
 
 
     def generate_random_number(self, a, b, x=31):
-
-        """
-        Gera um número pseudoaleatório dentro do intervalo [a, b],
-        combinando o tempo do sistema e operações bit a bit.
-
-        Parâmetros:
-        - a (int): valor mínimo do intervalo
-        - b (int): valor máximo do intervalo
-        - x (int): fator multiplicador opcional (seed base), padrão = 10
-        r"""
         if b < a:
             raise ValueError("O valor máximo 'b' deve ser maior ou igual ao mínimo 'a'.")
-
 
           # Captura todos os tempos necessários
         hora, minuto, segundo, mili, micro, nano, timestamp, nnano = self.get_time()
